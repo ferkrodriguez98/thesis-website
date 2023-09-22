@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Tesis{% endblock %}</title>
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="hidden md:block">
+                    <ul class="flex items-center">
+                        <li class="mr-6"><a class="text-gray-600 hover:text-gray-800 font-medium" href="/">Inicio</a></li>
+                        <li class="mr-6"><a class="text-gray-600 hover:text-gray-800 font-medium" href="#">Información</a></li>
+                    </ul>
+                </div>
+                <div class="flex items-center">
+                    <ul class="flex items-center">
+                        <li><a class="text-gray-600 hover:text-gray-800 font-medium" href="{% url 'app_tesis:person_form' %}">Participar</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="container mx-auto py-6 px-4">
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

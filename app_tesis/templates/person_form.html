@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-4xl font-bold text-center mb-6">Formulario</h1>
+	{% if errors %}
+		<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+			<ul>
+				{% for field, field_errors in errors.items %}
+					{% for error in field_errors %}
+						<li>{{ error.message }}</li>
+					{% endfor %}
+				{% endfor %}
+			</ul>
+		</div>
+	{% endif %}
+    <form action="/person-form/" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        {% csrf_token %}
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2 text-xl" for="degree">
+                ¿Qué carrera universitaria cursaste o estás cursando?
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="degree" type="text" name="degree">
+        </div>
+
+		<h2 class="text-xl mt-8 mb-4">
+			A continuación se presentan 50 preguntas acerca de su personalidad. Haga el cuestionario solo y sin ayuda de alguien. Las respuestas son anónimas. Conteste las siguientes preguntas con un número del 1 al 5, donde 1 es "Totalmente en desacuerdo" y 5 es "Totalmente de acuerdo".
+		</h2>
+
+		{% for question, question_code in questions_and_questions_codes %}
+
+		{% include 'question.html' %}
+
+		{% endfor %}
+
+        <div class="my-4 text-center">
+            <label class="text-xl block text-gray-700 font-bold mb-2" for="happiness_level">
+                ¿Qué tan feliz te sentís hoy?
+            </label>
+            <div class="flex items-center justify-center space-x-4">
+                <label for="happiness_level" class="inline-flex items-center">
+                    <input type="radio" id="happiness_level_1" name="happiness_level" value="1" class="form-radio h-6 w-6" required>
+                    <span class="ml-2">1</span>
+                </label>
+                <label for="happiness_level" class="inline-flex items-center">
+                    <input type="radio" id="happiness_level_2" name="happiness_level" value="2" class="form-radio h-6 w-6" required>
+                    <span class="ml-2">2</span>
+                </label>
+                <label for="happiness_level" class="inline-flex items-center">
+                    <input type="radio" id="happiness_level_3" name="happiness_level" value="3" class="form-radio h-6 w-6" required>
+                    <span class="ml-2">3</span>
+                </label>
+                <label for="happiness_level" class="inline-flex items-center">
+                    <input type="radio" id="happiness_level_4" name="happiness_level" value="4" class="form-radio h-6 w-6" required>
+                    <span class="ml-2">4</span>
+                </label>
+                <label for="happiness_level" class="inline-flex items-center">
+                    <input type="radio" id="happiness_level_5" name="happiness_level" value="5" class="form-radio h-6 w-6" required>
+                    <span class="ml-2">5</span>
+                </label>
+            </div>
+        </div>
+		
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="birth_date">
+                Fecha de Nacimiento <span class="text-red-500">*</span>
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_date" type="date" name="birth_date" required>
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="birth_hour">
+                Hora de Nacimiento (si no sabe no conteste)
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_hour" type="time" name="birth_hour">
+        </div>
+        <div class="mb-4">
+            <label class="block text-gray-700 font-bold mb-2" for="birth_location">
+                Lugar de Nacimiento <span class="text-red-500">*</span>
+            </label>
+            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_location" type="text" name="birth_location" required>
+        </div>
+                 
+        <div class="flex items-center justify-between">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+                Enviar
+            </button>
+        </div>
+    </form>
+{% endblock %}
