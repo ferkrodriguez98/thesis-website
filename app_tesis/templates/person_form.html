@@ -15,74 +15,223 @@
 	{% endif %}
     <form action="/person-form/" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         {% csrf_token %}
-        <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2 text-xl" for="degree">
-                ¿Qué carrera universitaria cursaste o estás cursando?
-            </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="degree" type="text" name="degree">
-        </div>
 
-		<h2 class="text-xl mt-8 mb-4">
-			A continuación se presentan 50 preguntas acerca de su personalidad. Haga el cuestionario solo y sin ayuda de alguien. Las respuestas son anónimas. Conteste las siguientes preguntas con un número del 1 al 5, donde 1 es "Totalmente en desacuerdo" y 5 es "Totalmente de acuerdo".
-		</h2>
-
-		{% for question, question_code in questions_and_questions_codes %}
-
-		{% include 'question.html' %}
-
-		{% endfor %}
-
-        <div class="my-4 text-center">
-            <label class="text-xl block text-gray-700 font-bold mb-2" for="happiness_level">
-                ¿Qué tan feliz te sentís hoy?
-            </label>
-            <div class="flex items-center justify-center space-x-4">
-                <label for="happiness_level" class="inline-flex items-center">
-                    <input type="radio" id="happiness_level_1" name="happiness_level" value="1" class="form-radio h-6 w-6" required>
-                    <span class="ml-2">1</span>
-                </label>
-                <label for="happiness_level" class="inline-flex items-center">
-                    <input type="radio" id="happiness_level_2" name="happiness_level" value="2" class="form-radio h-6 w-6" required>
-                    <span class="ml-2">2</span>
-                </label>
-                <label for="happiness_level" class="inline-flex items-center">
-                    <input type="radio" id="happiness_level_3" name="happiness_level" value="3" class="form-radio h-6 w-6" required>
-                    <span class="ml-2">3</span>
-                </label>
-                <label for="happiness_level" class="inline-flex items-center">
-                    <input type="radio" id="happiness_level_4" name="happiness_level" value="4" class="form-radio h-6 w-6" required>
-                    <span class="ml-2">4</span>
-                </label>
-                <label for="happiness_level" class="inline-flex items-center">
-                    <input type="radio" id="happiness_level_5" name="happiness_level" value="5" class="form-radio h-6 w-6" required>
-                    <span class="ml-2">5</span>
-                </label>
+        <div class="mb-6">
+            <!-- Progress Bar -->
+            <div id="progress-bar" class="relative pt-1">
+                <div class="flex mb-2 items-center justify-between">
+                    <div>
+                        <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200">
+                            Parte <span id="current-step">1</span>
+                        </span>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-xs font-semibold inline-block text-green-600">
+                            <span id="current-page">1</span> / 3
+                        </span>
+                    </div>
+                </div>
+                <div class="flex h-2 mb-4 overflow-hidden text-xs bg-green-200 rounded">
+                    <div id="progress-fill" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500"></div>
+                </div>
             </div>
         </div>
-		
-        <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2" for="birth_date">
-                Fecha de Nacimiento <span class="text-red-500">*</span>
-            </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_date" type="date" name="birth_date" required>
+
+        <!-- Página 1 -->
+
+        <div class="page">
+            <h2 class="text-xl mb-4">
+                El objetivo de este formulario es conseguir datos para un estudio de investigación sobre la personalidad y la felicidad. Los datos serán utilizados para un trabajo final de graduación de la Universidad de San Andrés. Los datos serán anónimos y no se utilizarán para ningún otro fin que no sea el de este trabajo.
+            </h2>
+    
+            <div class="my-4 text-center">
+                <label class="text-2xl block text-gray-700 font-bold mb-2" for="happiness_level">
+                    ¿Qué tan feliz te sentís hoy?
+                </label>
+                <div class="flex items-center justify-center space-x-4">
+                    <label for="happiness_level" class="inline-flex items-center">
+                        <input type="radio" id="happiness_level_1" name="happiness_level" value="1" class="form-radio h-6 w-6" required>
+                        <span class="ml-2 text-xl">1</span>
+                    </label>
+                    <label for="happiness_level" class="inline-flex items-center">
+                        <input type="radio" id="happiness_level_2" name="happiness_level" value="2" class="form-radio h-6 w-6" required>
+                        <span class="ml-2 text-xl">2</span>
+                    </label>
+                    <label for="happiness_level" class="inline-flex items-center">
+                        <input type="radio" id="happiness_level_3" name="happiness_level" value="3" class="form-radio h-6 w-6" required>
+                        <span class="ml-2 text-xl">3</span>
+                    </label>
+                    <label for="happiness_level" class="inline-flex items-center">
+                        <input type="radio" id="happiness_level_4" name="happiness_level" value="4" class="form-radio h-6 w-6" required>
+                        <span class="ml-2 text-xl">4</span>
+                    </label>
+                    <label for="happiness_level" class="inline-flex items-center">
+                        <input type="radio" id="happiness_level_5" name="happiness_level" value="5" class="form-radio h-6 w-6" required>
+                        <span class="ml-2 text-xl">5</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="mb-4 text-center">
+                <label class="block text-gray-700 font-bold mb-2 text-2xl" for="degree">
+                    ¿Qué carrera universitaria cursaste o estás cursando?
+                </label>
+                <input class="shadow appearance-none border text-xl rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="degree" type="text" name="degree">
+            </div>
         </div>
-        <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2" for="birth_hour">
-                Hora de Nacimiento (si no sabe no conteste)
-            </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_hour" type="time" name="birth_hour">
+        
+        <!-- Página 2 -->
+
+        <div class="page">
+            <h2 class="text-xl mb-4">
+                A continuación se presentan 50 preguntas acerca de su personalidad. <strong>Haga el cuestionario solo y sin ayuda de alguien.</strong> Las respuestas son anónimas. Conteste las siguientes preguntas con un número del 1 al 5, donde 1 es "Totalmente en desacuerdo" y 5 es "Totalmente de acuerdo".
+            </h2>
+    
+            {% for question, question_code in questions_and_questions_codes %}
+    
+            {% include 'question.html' %}
+    
+            {% endfor %}
         </div>
-        <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2" for="birth_location">
-                Lugar de Nacimiento <span class="text-red-500">*</span>
-            </label>
-            <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_location" type="text" name="birth_location" required>
+
+        <!-- Página 3 -->
+
+        <div class="page">
+            <h2 class="text-xl mb-4">
+                A continuación se presentan 3 preguntas más para tener datos demográficos. Las respuestas son anónimas y solo serán utilizadas con fines académicos. Si no sabe su hora de nacimiento dejela en blanco y no conteste.
+            </h2>
+            
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2 text-2xl" for="birth_date">
+                    Fecha de Nacimiento <span class="text-red-500">*</span>
+                </label>
+                <input class="shadow appearance-none border rounded w-full text-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_date" type="date" name="birth_date" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2 text-2xl" for="birth_location">
+                    Lugar de Nacimiento <span class="text-red-500">*</span>
+                </label>
+                <input class="shadow appearance-none border rounded text-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_location" type="text" name="birth_location" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2 text-2xl" for="birth_hour">
+                    Hora de Nacimiento (si no sabe no conteste)
+                </label>
+                <input class="shadow appearance-none border rounded w-full text-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_hour" type="time" name="birth_hour">
+            </div>
         </div>
-                 
-        <div class="flex items-center justify-between">
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+
+        <!-- Next and Previous Buttons -->
+        <div class="my-6 flex justify-between">
+            <button id="prev-page" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline" style="display: none;">Anterior</button>
+            <button id="next-page" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-auto" style="float: right;">Siguiente</button>
+        </div>
+
+        
+
+        <div id="submit-section" class="hidden flex items-center justify-center">
+            <button class="bg-green-500 hover:bg-green-700 text-white text-xl font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                 Enviar
             </button>
         </div>
+        
     </form>
+
+    <!-- JavaScript for controlling form pages and updating the progress bar -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pages = document.querySelectorAll('.page');
+            const prevButton = document.getElementById('prev-page');
+            const nextButton = document.getElementById('next-page');
+            const submitSection = document.getElementById('submit-section');
+
+            let currentPage = 0;
+
+            // Function to show/hide pages
+            function showPage(pageIndex) {
+                pages.forEach((page, index) => {
+                    if (index === pageIndex) {
+                        page.classList.remove('hidden');
+                    } else {
+                        page.classList.add('hidden');
+                    }
+                });
+
+                // Show/hide "Previous" and "Next" buttons based on current page
+                if (pageIndex === 0) {
+                    prevButton.style.display = 'none';
+                    nextButton.style.display = 'block';
+                } else if (pageIndex === pages.length - 1) {
+                    prevButton.style.display = 'block';
+                    nextButton.style.display = 'none';
+                } else {
+                    prevButton.style.display = 'block';
+                    nextButton.style.display = 'block';
+                }
+
+                // Show/hide "Submit" section based on current page
+                if (pageIndex === pages.length - 1) {
+                    submitSection.classList.remove('hidden');
+                } else {
+                    submitSection.classList.add('hidden');
+                }
+
+                // Update the progress bar
+                updateProgressBar(pageIndex);
+            }
+
+            // Show the initial page
+            showPage(currentPage);
+
+            // Event listener for "Next" button
+            nextButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (currentPage < pages.length - 1) {
+                    currentPage++;
+                    showPage(currentPage);
+                }
+            });
+
+            // Event listener for "Previous" button
+            prevButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (currentPage > 0) {
+                    currentPage--;
+                    showPage(currentPage);
+                }
+            });
+
+            // Event listener for "Submit" button (You can handle form submission here)
+            const submitButton = document.getElementById('submit-button');
+            submitButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Form submitted!'); // You can replace this with your submission logic
+            });
+
+            // Function to update the progress bar
+            function updateProgressBar(pageIndex) {
+                const progressBar = document.getElementById('progress-bar');
+                const progressFill = document.getElementById('progress-fill');
+                const currentStepElement = document.getElementById('current-step');
+                const currentPageElement = document.getElementById('current-page');
+
+                // Calculate the current step and page numbers (1-based)
+                const currentStepNumber = pageIndex + 1;
+                const currentPageNumber = pageIndex + 1;
+
+                // Calculate the width percentage based on the current page
+                const widthPercentage = (currentPageNumber / pages.length) * 100;
+
+                // Update the progress bar fill width
+                progressFill.style.width = widthPercentage + '%';
+
+                // Update the displayed current step and page numbers
+                currentStepElement.textContent = currentStepNumber;
+                currentPageElement.textContent = currentPageNumber;
+            }
+
+            // Call the function to update the progress bar whenever the page changes
+            showPage(currentPage);
+        });
+    </script>
 {% endblock %}
