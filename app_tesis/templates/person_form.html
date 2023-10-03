@@ -39,7 +39,7 @@
 
         <!-- Página 1 -->
 
-        <div class="page">
+        <div class="page" data-page-index="0">
             <h2 class="text-xl mb-4">
                 El objetivo de este formulario es conseguir datos para un estudio de investigación sobre la personalidad y la felicidad. Los datos serán utilizados para un trabajo final de graduación de la Universidad de San Andrés. Los datos serán anónimos y no se utilizarán para ningún otro fin que no sea el de este trabajo.
             </h2>
@@ -48,26 +48,26 @@
                 <label class="text-2xl block text-gray-700 font-bold mb-2" for="happiness_level">
                     ¿Qué tan feliz te sentís hoy?
                 </label>
-                <div class="flex items-center justify-center space-x-4">
-                    <label for="happiness_level" class="inline-flex items-center">
-                        <input type="radio" id="happiness_level_1" name="happiness_level" value="1" class="form-radio h-6 w-6" required>
-                        <span class="ml-2 text-xl">1</span>
+                <div class="flex items-center justify-center space-x-4 cursor-pointer">
+                    <label for="happiness_level" class="inline-flex items-center cursor-pointer">
+                        <input type="radio" id="happiness_level_1" name="happiness_level" value="1" class="form-radio h-6 w-6 cursor-pointer" required>
+                        <span class="ml-2 text-xl cursor-pointer">1</span>
                     </label>
-                    <label for="happiness_level" class="inline-flex items-center">
-                        <input type="radio" id="happiness_level_2" name="happiness_level" value="2" class="form-radio h-6 w-6" required>
-                        <span class="ml-2 text-xl">2</span>
+                    <label for="happiness_level" class="inline-flex items-center cursor-pointer">
+                        <input type="radio" id="happiness_level_2" name="happiness_level" value="2" class="form-radio h-6 w-6 cursor-pointer" required>
+                        <span class="ml-2 text-xl cursor-pointer">2</span>
                     </label>
-                    <label for="happiness_level" class="inline-flex items-center">
-                        <input type="radio" id="happiness_level_3" name="happiness_level" value="3" class="form-radio h-6 w-6" required>
-                        <span class="ml-2 text-xl">3</span>
+                    <label for="happiness_level" class="inline-flex items-center cursor-pointer">
+                        <input type="radio" id="happiness_level_3" name="happiness_level" value="3" class="form-radio h-6 w-6 cursor-pointer" required>
+                        <span class="ml-2 text-xl cursor-pointer">3</span>
                     </label>
-                    <label for="happiness_level" class="inline-flex items-center">
-                        <input type="radio" id="happiness_level_4" name="happiness_level" value="4" class="form-radio h-6 w-6" required>
-                        <span class="ml-2 text-xl">4</span>
+                    <label for="happiness_level" class="inline-flex items-center cursor-pointer">
+                        <input type="radio" id="happiness_level_4" name="happiness_level" value="4" class="form-radio h-6 w-6 cursor-pointer" required>
+                        <span class="ml-2 text-xl cursor-pointer">4</span>
                     </label>
-                    <label for="happiness_level" class="inline-flex items-center">
-                        <input type="radio" id="happiness_level_5" name="happiness_level" value="5" class="form-radio h-6 w-6" required>
-                        <span class="ml-2 text-xl">5</span>
+                    <label for="happiness_level" class="inline-flex items-center cursor-pointer">
+                        <input type="radio" id="happiness_level_5" name="happiness_level" value="5" class="form-radio h-6 w-6 cursor-pointer" required>
+                        <span class="ml-2 text-xl cursor-pointer">5</span>
                     </label>
                 </div>
             </div>
@@ -82,7 +82,7 @@
         
         <!-- Página 2 -->
 
-        <div class="page">
+        <div class="page" data-page-index="1">
             <h2 class="text-xl mb-4">
                 A continuación se presentan 50 preguntas acerca de su personalidad. <strong>Haga el cuestionario solo y sin ayuda de alguien.</strong> Las respuestas son anónimas. Conteste las siguientes preguntas con un número del 1 al 5, donde 1 es "Totalmente en <strong>desacuerdo</strong>" y 5 es "Totalmente <strong>de acuerdo</strong>".
             </h2>
@@ -96,7 +96,7 @@
 
         <!-- Página 3 -->
 
-        <div class="page">
+        <div class="page" data-page-index="2">
             <h2 class="text-xl mb-4">
                 A continuación se presentan 3 preguntas más para tener datos demográficos. Las respuestas son anónimas y solo serán utilizadas con fines académicos. Si no sabe su hora de nacimiento dejela en blanco y no conteste.
             </h2>
@@ -121,13 +121,11 @@
             </div>
         </div>
 
-        <!-- Next and Previous Buttons -->
+        <!-- Next Buttons -->
         <div class="my-6 flex justify-between">
-            <button id="prev-page" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline" style="display: none;">Anterior</button>
-            <button id="next-page" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-auto" style="float: right;">Siguiente</button>
+            <button id="next-page" class="next-button bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-auto" style="float: right;" disabled>Siguiente</button>
+            <button id="next-page-2" class="next-button-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-auto" style="float: right;" disabled>Siguiente</button>
         </div>
-
-        
 
         <div id="submit-section" class="hidden flex items-center justify-center">
             <button class="bg-green-500 hover:bg-green-700 text-white text-xl font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
@@ -141,13 +139,18 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const pages = document.querySelectorAll('.page');
-            const prevButton = document.getElementById('prev-page');
             const nextButton = document.getElementById('next-page');
+            const nextButtonPage2 = document.getElementById('next-page-2');
             const submitSection = document.getElementById('submit-section');
-
+            const firstPage = document.querySelector('.page[data-page-index="0"]');
+            const radioButtonsPage1 = firstPage.querySelectorAll('input[type="radio"]');
+            const secondPage = document.querySelector('.page[data-page-index="1"]');
+            const radioButtonsPage2 = secondPage.querySelectorAll('input[type="radio"]');
+            const degree = document.querySelector('#degree');
+    
             let currentPage = 0;
-
-            // Function to show/hide pages
+    
+            // Function to show/hide pages and update button states
             function showPage(pageIndex) {
                 pages.forEach((page, index) => {
                     if (index === pageIndex) {
@@ -156,33 +159,59 @@
                         page.classList.add('hidden');
                     }
                 });
-
-                // Show/hide "Previous" and "Next" buttons based on current page
-                if (pageIndex === 0) {
-                    prevButton.style.display = 'none';
-                    nextButton.style.display = 'block';
-                } else if (pageIndex === pages.length - 1) {
-                    prevButton.style.display = 'block';
-                    nextButton.style.display = 'none';
-                } else {
-                    prevButton.style.display = 'block';
-                    nextButton.style.display = 'block';
-                }
-
+    
+                // Show/hide "Next" buttons based on current page
+                nextButton.style.display = pageIndex === 0 ? 'block' : 'none';
+                nextButtonPage2.style.display = pageIndex === 1 ? 'block' : 'none';
+                
                 // Show/hide "Submit" section based on current page
-                if (pageIndex === pages.length - 1) {
-                    submitSection.classList.remove('hidden');
-                } else {
-                    submitSection.classList.add('hidden');
-                }
-
+                submitSection.style.display = pageIndex === pages.length - 1 ? 'block' : 'none';
+    
                 // Update the progress bar
                 updateProgressBar(pageIndex);
+    
+                // Enable or disable "Next" button based on page completion
+                if (pageIndex === 0) {
+                    nextButton.disabled = !isPage1Complete();
+                }
+
+                if (pageIndex === 1) {
+                    nextButtonPage2.disabled = !isPage2Complete();
+                }
             }
 
-            // Show the initial page
-            showPage(currentPage);
+            // Function to update page 1 completion
+            function updatePage1Completion() {
+                const isRadioButtonsPage1Checked = Array.from(radioButtonsPage1).some(rb => rb.checked);
+                const isDegreeFilled = degree.value.trim() !== "";
+                nextButton.disabled = !(isRadioButtonsPage1Checked && isDegreeFilled);
+            }
 
+            // Event listener for radio buttons on the first page
+            radioButtonsPage1.forEach(function (radioButton) {
+                radioButton.addEventListener('change', function () {
+                    updatePage1Completion();
+                });
+            });
+
+            // Event listener for degree input on the first page
+            degree.addEventListener('input', function () {
+                updatePage1Completion();
+            });        
+
+            // Function to update page 2 completion
+            function updatePage2Completion() {
+                const isRadioButtonsPage2Checked = Array.from(radioButtonsPage2).some(rb => rb.checked);
+                nextButtonPage2.disabled = !isRadioButtonsPage2Checked;
+            }
+
+            // Event listener for radio buttons on the second page
+            radioButtonsPage2.forEach(function (radioButton) {
+                radioButton.addEventListener('change', function () {
+                    updatePage2Completion();
+                });
+            });
+    
             // Event listener for "Next" button
             nextButton.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -191,47 +220,39 @@
                     showPage(currentPage);
                 }
             });
-
-            // Event listener for "Previous" button
-            prevButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                if (currentPage > 0) {
-                    currentPage--;
-                    showPage(currentPage);
-                }
-            });
-
+    
             // Event listener for "Submit" button (You can handle form submission here)
-            const submitButton = document.getElementById('submit-button');
+            const submitButton = document.getElementById('submit-section');
             submitButton.addEventListener('click', function(e) {
                 e.preventDefault();
-                alert('Form submitted!'); // You can replace this with your submission logic
+                alert('Form submitted!');
             });
-
+    
             // Function to update the progress bar
             function updateProgressBar(pageIndex) {
                 const progressBar = document.getElementById('progress-bar');
                 const progressFill = document.getElementById('progress-fill');
                 const currentStepElement = document.getElementById('current-step');
                 const currentPageElement = document.getElementById('current-page');
-
+    
                 // Calculate the current step and page numbers (1-based)
                 const currentStepNumber = pageIndex + 1;
                 const currentPageNumber = pageIndex + 1;
-
+    
                 // Calculate the width percentage based on the current page
                 const widthPercentage = (currentPageNumber / pages.length) * 100;
-
+    
                 // Update the progress bar fill width
                 progressFill.style.width = widthPercentage + '%';
-
+    
                 // Update the displayed current step and page numbers
                 currentStepElement.textContent = currentStepNumber;
                 currentPageElement.textContent = currentPageNumber;
             }
-
+    
             // Call the function to update the progress bar whenever the page changes
             showPage(currentPage);
         });
     </script>
+    
 {% endblock %}

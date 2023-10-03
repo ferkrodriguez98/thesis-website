@@ -4,6 +4,39 @@
 <head>
     <title>{% block title %}Tesis{% endblock %}</title>
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <style>
+        /* Custom CSS for radio buttons */
+        input[type="radio"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border: 2px solid #ccc; /* White border for unchecked state */
+            border-radius: 50%;
+            outline: none;
+            background-color: #fff; /* White background for unchecked state */
+            cursor: pointer;
+        }
+    
+        /* Style for when the radio button is checked */
+        input[type="radio"]:checked {
+            background-color: #68D391; /* Use the same color as bg-green-200 for the checked state */
+            border: 2px solid #68D391; /* Use the same border color as bg-green-200 for the checked state */
+        }
+
+        /* Style the Next button when it's disabled */
+        .next-button:disabled {
+            background-color: #ccc; /* Set the button background to gray */
+            cursor: not-allowed; /* Change cursor to not-allowed */
+        }
+
+        .next-button-2:disabled {
+            background-color: #ccc; /* Set the button background to gray */
+            cursor: not-allowed; /* Change cursor to not-allowed */
+        }
+    </style>
+    
 </head>
 <body class="bg-gray-100">
     <nav class="bg-white shadow">
