@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import PersonForm
 from .models import Person
 from django.views.generic.edit import CreateView
+from django.views.decorators.csrf import csrf_protect
 
 class PersonCreateView(CreateView):
     model = Person
@@ -12,6 +13,7 @@ class PersonCreateView(CreateView):
 def home(request):
     return render(request, 'home.html')
 
+@csrf_protect  # Apply the CSRF protection to this view
 def person_form(request):
     if request.method == 'POST':
         form = PersonForm(request.POST)
