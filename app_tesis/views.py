@@ -17,7 +17,7 @@ def home(request):
 def person_form(request):
     if request.method == 'POST':
         form = PersonForm(request.POST)
-        print(form.errors.as_data())
+        print(f'WHADDUP BRODER {form.is_valid()}')
         if form.is_valid():
             form.save()
             return redirect('app_tesis:success')
