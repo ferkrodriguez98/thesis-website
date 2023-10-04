@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1 class="text-4xl font-bold text-center mb-6">Formulario</h1>
-	{% if errors %}
+	{% comment %} {% if errors %}
 		<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
 			<ul>
 				{% for field, field_errors in errors.items %}
@@ -12,7 +12,7 @@
 				{% endfor %}
 			</ul>
 		</div>
-	{% endif %}
+	{% endif %} {% endcomment %}
     <form action="/person-form/" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
         {% csrf_token %}
 
@@ -98,7 +98,7 @@
 
         <div class="page" data-page-index="2">
             <h2 class="text-xl mb-4">
-                A continuación se presentan 3 preguntas más para tener datos demográficos. Las respuestas son anónimas y solo serán utilizadas con fines académicos. Si no sabe su hora de nacimiento dejela en blanco y no conteste.
+                A continuación se presentan 2 preguntas más para tener datos demográficos. Las respuestas son anónimas y solo serán utilizadas con fines académicos.
             </h2>
             
             <div class="mb-4">
@@ -113,12 +113,12 @@
                 </label>
                 <input class="shadow appearance-none border rounded text-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_location" type="text" name="birth_location" required>
             </div>
-            <div class="mb-4">
+            {% comment %} <div class="mb-4">
                 <label class="block text-gray-700 font-bold mb-2 text-2xl" for="birth_hour">
                     Hora de Nacimiento (si no sabe no conteste)
                 </label>
                 <input class="shadow appearance-none border rounded w-full text-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_hour" type="time" name="birth_hour">
-            </div>
+            </div> {% endcomment %}
         </div>
 
         <!-- Next Buttons -->
@@ -128,7 +128,7 @@
         </div>
 
         <div id="submit-section" class="hidden flex items-center justify-center">
-            <button class="bg-green-500 hover:bg-green-700 text-white text-xl font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+            <button id="submit-button" class="submit-button bg-green-500 hover:bg-green-700 text-white text-xl font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" disabled>
                 Enviar
             </button>
         </div>
@@ -139,15 +139,21 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const pages = document.querySelectorAll('.page');
-            const nextButton = document.getElementById('next-page');
-            const nextButtonPage2 = document.getElementById('next-page-2');
-            const submitSection = document.getElementById('submit-section');
+
             const firstPage = document.querySelector('.page[data-page-index="0"]');
             const radioButtonsPage1 = firstPage.querySelectorAll('input[type="radio"]');
+            const degree = document.querySelector('#degree');
+            const nextButton = document.getElementById('next-page');
+
             const secondPage = document.querySelector('.page[data-page-index="1"]');
             const radioButtonsPage2 = secondPage.querySelectorAll('input[type="radio"]');
-            const degree = document.querySelector('#degree');
-    
+            const nextButtonPage2 = document.getElementById('next-page-2');
+
+            const submitSection = document.getElementById('submit-section');
+            const birth_date = document.getElementById('birth_date');
+            const birth_location = document.getElementById('birth_location');
+            const submitButton = document.getElementById('submit-button');
+            
             let currentPage = 0;
     
             // Function to show/hide pages and update button states
@@ -170,14 +176,6 @@
                 // Update the progress bar
                 updateProgressBar(pageIndex);
     
-                // Enable or disable "Next" button based on page completion
-                if (pageIndex === 0) {
-                    nextButton.disabled = !isPage1Complete();
-                }
-
-                if (pageIndex === 1) {
-                    nextButtonPage2.disabled = !isPage2Complete();
-                }
             }
 
             // Function to update page 1 completion
@@ -199,19 +197,40 @@
                 updatePage1Completion();
             });        
 
-            // Function to update page 2 completion
-            function updatePage2Completion() {
-                const isRadioButtonsPage2Checked = Array.from(radioButtonsPage2).some(rb => rb.checked);
-                nextButtonPage2.disabled = !isRadioButtonsPage2Checked;
-            }
+            // Create an object to keep track of checked options for each question
+            const checkedOptions = {};
+
+            // Initialize checkedOptions with all questions set to false
+            radioButtonsPage2.forEach(function (rb) {
+                const questionCode = rb.name; // Assuming the name attribute contains the question_code
+                checkedOptions[questionCode] = false;
+            });
 
             // Event listener for radio buttons on the second page
             radioButtonsPage2.forEach(function (radioButton) {
                 radioButton.addEventListener('change', function () {
-                    updatePage2Completion();
+                    // Loop through all radio buttons on the page
+                    radioButtonsPage2.forEach(function (rb) {
+                        const questionCode = rb.name; // Assuming the name attribute contains the question_code
+
+                        if (rb.checked) {
+                            // Mark the option as checked for the corresponding question
+                            checkedOptions[questionCode] = true;
+                        }
+                    });
+
+                    // Check if all questions have at least one option checked
+                    const isPage2Complete = Object.values(checkedOptions).every(checked => checked === true);
+
+                    // Enable or disable the "Next" button for page 2 based on completion
+                    nextButtonPage2.disabled = !isPage2Complete;
+
+                    // Log the checked options and completeness status
+                    console.log("Checked Options:", checkedOptions);
+                    console.log("Page 2 Complete:", isPage2Complete);
                 });
             });
-    
+
             // Event listener for "Next" button
             nextButton.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -220,12 +239,29 @@
                     showPage(currentPage);
                 }
             });
-    
-            // Event listener for "Submit" button (You can handle form submission here)
-            const submitButton = document.getElementById('submit-section');
-            submitButton.addEventListener('click', function(e) {
+
+            // Event listener for "Next" button
+            nextButtonPage2.addEventListener('click', function(e) {
                 e.preventDefault();
-                alert('Form submitted!');
+                if (currentPage < pages.length - 1) {
+                    currentPage++;
+                    showPage(currentPage);
+                }
+            });
+
+            function updatePage3Completion() {
+                const isBirthDateFilled = birth_date.value.trim() !== "";
+                const isBirthLocationFilled = birth_location.value.trim() !== "";
+                submitButton.disabled = !(isBirthDateFilled && isBirthLocationFilled);
+            }
+    
+            // Event listener for degree input on the first page
+            birth_date.addEventListener('input', function () {
+                updatePage3Completion();
+            });
+
+            birth_location.addEventListener('input', function () {
+                updatePage3Completion();
             });
     
             // Function to update the progress bar
