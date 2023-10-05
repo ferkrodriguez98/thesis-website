@@ -40,51 +40,54 @@
         <!-- Página 1 -->
 
         <div class="page" data-page-index="0">
-            <h2 class="text-xl mb-4">
-                El objetivo de este formulario es conseguir datos para un estudio de investigación sobre la personalidad y la felicidad. Los datos serán utilizados para un trabajo final de graduación de la Universidad de San Andrés. Los datos serán anónimos y no se utilizarán para ningún otro fin que no sea el de este trabajo.
+            <h2 class="text-md md:text-xl mb-6 md:mb-4">
+                El objetivo de este formulario es conseguir datos para un estudio de investigación sobre la personalidad y la felicidad. 
+                <br><br>Los datos serán utilizados para un trabajo final de graduación de la Universidad de San Andrés. Los datos serán anónimos y no se utilizarán para ningún otro fin que no sea el de este trabajo.
             </h2>
     
             <div class="my-4 text-center">
-                <label class="text-2xl block text-gray-700 font-bold mb-2" for="happiness_level">
+                <label class="text-lg md:text-2xl block text-gray-700 font-bold mb-2" for="happiness_level">
                     ¿Qué tan feliz te sentís hoy?
                 </label>
                 <div class="flex items-center justify-center space-x-4 cursor-pointer">
                     <label for="happiness_level" class="inline-flex items-center cursor-pointer">
                         <input type="radio" id="happiness_level_1" name="happiness_level" value="1" class="form-radio h-6 w-6 cursor-pointer" required>
-                        <span class="ml-2 text-xl cursor-pointer">1</span>
+                        <span class="ml-2 text-md md:text-xl cursor-pointer">1</span>
                     </label>
                     <label for="happiness_level" class="inline-flex items-center cursor-pointer">
                         <input type="radio" id="happiness_level_2" name="happiness_level" value="2" class="form-radio h-6 w-6 cursor-pointer" required>
-                        <span class="ml-2 text-xl cursor-pointer">2</span>
+                        <span class="ml-2 text-md md:text-xl cursor-pointer">2</span>
                     </label>
                     <label for="happiness_level" class="inline-flex items-center cursor-pointer">
                         <input type="radio" id="happiness_level_3" name="happiness_level" value="3" class="form-radio h-6 w-6 cursor-pointer" required>
-                        <span class="ml-2 text-xl cursor-pointer">3</span>
+                        <span class="ml-2 text-md md:text-xl cursor-pointer">3</span>
                     </label>
                     <label for="happiness_level" class="inline-flex items-center cursor-pointer">
                         <input type="radio" id="happiness_level_4" name="happiness_level" value="4" class="form-radio h-6 w-6 cursor-pointer" required>
-                        <span class="ml-2 text-xl cursor-pointer">4</span>
+                        <span class="ml-2 text-md md:text-xl cursor-pointer">4</span>
                     </label>
                     <label for="happiness_level" class="inline-flex items-center cursor-pointer">
                         <input type="radio" id="happiness_level_5" name="happiness_level" value="5" class="form-radio h-6 w-6 cursor-pointer" required>
-                        <span class="ml-2 text-xl cursor-pointer">5</span>
+                        <span class="ml-2 text-md md:text-xl cursor-pointer">5</span>
                     </label>
                 </div>
             </div>
 
             <div class="mb-4 text-center">
-                <label class="block text-gray-700 font-bold mb-2 text-2xl" for="degree">
+                <label class="block text-gray-700 font-bold mb-2 text-lg md:text-2xl" for="degree">
                     ¿Qué carrera universitaria cursaste o estás cursando?
                 </label>
-                <input class="shadow appearance-none border text-xl rounded w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="degree" type="text" name="degree">
+                <input class="shadow appearance-none border text-xl rounded w-full md:w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="degree" type="text" name="degree">
             </div>
         </div>
         
         <!-- Página 2 -->
 
         <div class="page" data-page-index="1">
-            <h2 class="text-xl mb-4">
-                A continuación se presentan 50 preguntas acerca de su personalidad. <strong>Haga el cuestionario solo y sin ayuda de alguien.</strong> Las respuestas son anónimas. Conteste las siguientes preguntas con un número del 1 al 5, donde 1 es "Totalmente en <strong>desacuerdo</strong>" y 5 es "Totalmente <strong>de acuerdo</strong>".
+            <h2 class="text-md md:text-xl mb-4">
+                A continuación se presentan 50 preguntas acerca de su personalidad. <strong>Haga el cuestionario solo y sin ayuda de alguien.</strong>
+                <br><br>Las respuestas son anónimas.
+                <br><br>Conteste las siguientes preguntas con un número del 1 al 5, donde 1 es "Totalmente en <strong>desacuerdo</strong>" y 5 es "Totalmente <strong>de acuerdo</strong>".
             </h2>
     
             {% for question, question_code in questions_and_questions_codes %}
@@ -97,21 +100,21 @@
         <!-- Página 3 -->
 
         <div class="page" data-page-index="2">
-            <h2 class="text-xl mb-4">
+            <h2 class="text-md md:text-xl mb-4">
                 A continuación se presentan 2 preguntas más para tener datos demográficos. Las respuestas son anónimas y solo serán utilizadas con fines académicos.
             </h2>
             
             <div class="mb-4">
-                <label class="block text-gray-700 font-bold mb-2 text-2xl" for="birth_date">
+                <label class="block text-gray-700 font-bold mb-2 text-lg md:text-2xl" for="birth_date">
                     Fecha de Nacimiento <span class="text-red-500">*</span>
                 </label>
-                <input class="shadow appearance-none border rounded w-full text-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_date" type="date" name="birth_date" required>
+                <input class="shadow appearance-none border rounded w-full text-md md:text-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_date" type="date" name="birth_date" required>
             </div>
             <div class="mb-4">
-                <label class="block text-gray-700 font-bold mb-2 text-2xl" for="birth_location">
+                <label class="block text-gray-700 font-bold mb-2 text-lg md:text-2xl" for="birth_location">
                     Lugar de Nacimiento <span class="text-red-500">*</span>
                 </label>
-                <input class="shadow appearance-none border rounded text-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_location" type="text" name="birth_location" required>
+                <input class="shadow appearance-none border rounded text-md md:text-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_location" type="text" name="birth_location" required>
             </div>
             {% comment %} <div class="mb-4">
                 <label class="block text-gray-700 font-bold mb-2 text-2xl" for="birth_hour">
@@ -128,7 +131,7 @@
         </div>
 
         <div id="submit-section" class="hidden flex items-center justify-center">
-            <button id="submit-button" class="submit-button bg-green-500 hover:bg-green-700 text-white text-xl font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" disabled>
+            <button id="submit-button" class="submit-button bg-green-500 hover:bg-green-700 text-white text-lg md:text-xl font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" disabled>
                 Enviar
             </button>
         </div>
