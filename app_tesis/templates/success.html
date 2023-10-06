@@ -1,7 +1,207 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	<h1 class="text-4xl font-bold text-center mb-8">
-		¡Gracias!
-	</h1>
+    <div class="bg-white rounded-lg shadow-lg p-4 md:p-6">
+        <h1 class="text-2xl md:text-4xl font-bold mb-4 text-center">Resultados del Test OCEAN</h1>
+        
+        <!-- Openness Score -->
+        <div class="flex justify-between items-center mb-6">
+            <div>
+                <h2 class="text-xl font-semibold">Apertura (Openness)</h2>
+                <p>La apertura se refiere a tu disposición para experimentar cosas nuevas y tu aprecio por la creatividad y la imaginación.</p>
+            </div>
+            <div class="flex items-center space-x-2">
+                <div class="rounded-full w-12 h-12 bg-blue-500 text-white flex items-center justify-center text-lg font-semibold shadow-md">
+                    {{ ocean_results.openness }}
+                </div>
+                <p class="text-lg font-semibold">
+                    {% if ocean_results.openness <= 20 %}
+                        Muy Baja
+                    {% elif ocean_results.openness <= 40 %}
+                        Baja
+                    {% elif ocean_results.openness <= 60 %}
+                        Moderada
+                    {% elif ocean_results.openness <= 80 %}
+                        Alta
+                    {% else %}
+                        Muy Alta
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        <!-- Conditional Paragraph for Openness -->
+        <p class="mb-6">
+            {% if ocean_results.openness <= 20 %}
+                Tu puntuación en apertura es muy baja. Esto sugiere que puedes preferir lo conocido y rutinario. Es posible que te sientas más cómodo con lo familiar y que tengas menos inclinación por explorar nuevas ideas o actividades no convencionales.
+            {% elif ocean_results.openness <= 40 %}
+                Tu puntuación en apertura es baja. Aunque puedes ser algo abierto a nuevas experiencias, tiendes a mantener cierta rutina y comodidad en lo conocido.
+            {% elif ocean_results.openness <= 60 %}
+                Tu puntuación en apertura es moderada. Eres receptivo a nuevas ideas y experiencias, pero también encuentras valor en la estabilidad y lo familiar.
+            {% elif ocean_results.openness <= 80 %}
+                Tu puntuación en apertura es alta. Buscas activamente oportunidades para explorar y abrazar nuevas perspectivas. Encuentras un equilibrio entre la rutina y la novedad.
+            {% else %}
+                Tu puntuación en apertura es muy alta. Tienes un fuerte deseo de explorar nuevas ideas, culturas y experiencias. Disfrutas activamente buscando oportunidades para ampliar tus horizontes y eres abierto a ideas poco convencionales.
+            {% endif %}
+        </p>
+
+        <!-- Conscientiousness Score -->
+        <div class="flex justify-between items-center mb-6">
+            <div>
+                <h2 class="text-xl font-semibold">Consciencia (Conscientiousness)</h2>
+                <p>La consciencia se refiere a tu nivel de organización, responsabilidad y capacidad para cumplir con las tareas y metas.</p>
+            </div>
+            <div class="flex items-center space-x-2">
+                <div class="rounded-full w-12 h-12 bg-blue-500 text-white flex items-center justify-center text-lg font-semibold shadow-md">
+                    {{ ocean_results.conscientiousness }}
+                </div>
+                <p class="text-lg font-semibold">
+                    {% if ocean_results.conscientiousness <= 20 %}
+                        Muy Baja
+                    {% elif ocean_results.conscientiousness <= 40 %}
+                        Baja
+                    {% elif ocean_results.conscientiousness <= 60 %}
+                        Moderada
+                    {% elif ocean_results.conscientiousness <= 80 %}
+                        Alta
+                    {% else %}
+                        Muy Alta
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        <!-- Conditional Paragraph for Conscientiousness -->
+        <p class="mb-6">
+            {% if ocean_results.conscientiousness <= 20 %}
+                Tu puntuación en consciencia es muy baja. Esto sugiere que puedes ser espontáneo y flexible en tu enfoque de la vida. Es posible que no pongas un fuerte énfasis en la organización y a veces tengas dificultades con los plazos y las responsabilidades.
+            {% elif ocean_results.conscientiousness <= 40 %}
+                Tu puntuación en consciencia es baja. Aunque eres algo organizado, también puedes adaptarte a las circunstancias cambiantes. Puedes priorizar las tareas en función de su urgencia e importancia.
+            {% elif ocean_results.conscientiousness <= 60 %}
+                Tu puntuación en consciencia es moderada. Indica que eres organizado y responsable sin ser excesivamente rígido. Puedes encontrar un equilibrio entre la planificación y la flexibilidad, lo que te hace confiable en diversas situaciones.
+            {% elif ocean_results.conscientiousness <= 80 %}
+                Tu puntuación en consciencia es alta. Excelentes en organización y responsabilidad, superando las expectativas. Eres diligente, disciplinado y reconocido por tu confiabilidad y compromiso con tus metas.
+            {% else %}
+                Tu puntuación en consciencia es muy alta. Eres extremadamente organizado y responsable. Destacas en la organización y la responsabilidad, y a menudo superas las expectativas. Eres diligente, disciplinado y conocido por tu confiabilidad y compromiso con tus objetivos.
+            {% endif %}
+        </p>
+
+        <!-- Extraversion Score -->
+        <div class="flex justify-between items-center mb-6">
+            <div>
+                <h2 class="text-xl font-semibold">Extraversión (Extraversion)</h2>
+                <p>La extraversión se refiere a tu nivel de sociabilidad, energía y preferencia por las interacciones sociales.</p>
+            </div>
+            <div class="flex items-center space-x-2">
+                <div class="rounded-full w-12 h-12 bg-blue-500 text-white flex items-center justify-center text-lg font-semibold shadow-md">
+                    {{ ocean_results.extraversion }}
+                </div>
+                <p class="text-lg font-semibold">
+                    {% if ocean_results.extraversion <= 20 %}
+                        Muy Baja
+                    {% elif ocean_results.extraversion <= 40 %}
+                        Baja
+                    {% elif ocean_results.extraversion <= 60 %}
+                        Moderada
+                    {% elif ocean_results.extraversion <= 80 %}
+                        Alta
+                    {% else %}
+                        Muy Alta
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        <!-- Conditional Paragraph for Extraversion -->
+        <p class="mb-6">
+            {% if ocean_results.extraversion <= 20 %}
+                Tu puntuación en extraversión es muy baja. Prefieres actividades solitarias y puedes ser introvertido en situaciones sociales. Disfrutas del tiempo a solas y puedes ser reservado.
+            {% elif ocean_results.extraversion <= 40 %}
+                Tu puntuación en extraversión es baja. Eres capaz de disfrutar de la compañía de otros, pero también valoras tu tiempo a solas. Puedes ser tanto introvertido como extrovertido en diferentes situaciones.
+            {% elif ocean_results.extraversion <= 60 %}
+                Tu puntuación en extraversión es moderada. Disfrutas de las interacciones sociales, pero también valoras tu tiempo a solas. Puedes adaptarte fácilmente a diferentes entornos sociales.
+            {% elif ocean_results.extraversion <= 80 %}
+                Tu puntuación en extraversión es alta. Eres extrovertido y disfrutas de la compañía de otras personas. Tienes una personalidad sociable y te sientes cómodo en situaciones sociales.
+            {% else %}
+                Tu puntuación en extraversión es muy alta. Eres extremadamente extrovertido y te encanta interactuar con otras personas. Disfrutas de la compañía social y puedes ser el alma de la fiesta.
+            {% endif %}
+        </p>
+
+		<!-- Agreeableness Score -->
+        <div class="flex justify-between items-center mb-6">
+            <div>
+                <h2 class="text-xl font-semibold">Amabilidad (Agreeableness)</h2>
+                <p>La amabilidad se refiere a tu nivel de cooperación, empatía y disposición para ayudar a los demás.</p>
+            </div>
+            <div class="flex items-center space-x-2">
+                <div class="rounded-full w-12 h-12 bg-blue-500 text-white flex items-center justify-center text-lg font-semibold shadow-md">
+                    {{ ocean_results.agreeableness }}
+                </div>
+                <p class="text-lg font-semibold">
+                    {% if ocean_results.agreeableness <= 20 %}
+                        Muy Baja
+                    {% elif ocean_results.agreeableness <= 40 %}
+                        Baja
+                    {% elif ocean_results.agreeableness <= 60 %}
+                        Moderada
+                    {% elif ocean_results.agreeableness <= 80 %}
+                        Alta
+                    {% else %}
+                        Muy Alta
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        <!-- Conditional Paragraph for Agreeableness -->
+        <p class="mb-6">
+            {% if ocean_results.agreeableness <= 20 %}
+                Tu puntuación en amabilidad es muy baja. Esto sugiere que puedes ser crítico y competitivo en lugar de cooperativo. Es posible que tiendas a enfocarte más en tus propios intereses que en los demás.
+            {% elif ocean_results.agreeableness <= 40 %}
+                Tu puntuación en amabilidad es baja. Eres capaz de ser cooperativo en ciertas situaciones, pero también puedes ser crítico o competitivo en otras.
+            {% elif ocean_results.agreeableness <= 60 %}
+                Tu puntuación en amabilidad es moderada. Eres generalmente cooperativo y empático, pero también puedes establecer límites cuando es necesario.
+            {% elif ocean_results.agreeableness <= 80 %}
+                Tu puntuación en amabilidad es alta. Eres cooperativo, empático y generalmente dispuesto a ayudar a los demás. Te relacionas bien con los demás y valoras las relaciones armoniosas.
+            {% else %}
+                Tu puntuación en amabilidad es muy alta. Eres extremadamente cooperativo, empático y siempre dispuesto a ayudar a los demás. Tu naturaleza amable y compasiva es una fortaleza en tus relaciones.
+            {% endif %}
+        </p>
+
+        <!-- Neuroticism Score -->
+        <div class="flex justify-between items-center">
+            <div>
+                <h2 class="text-xl font-semibold">Neuroticismo (Neuroticism)</h2>
+                <p>El neuroticismo se refiere a tu nivel de estabilidad emocional y la tendencia a experimentar emociones negativas.</p>
+            </div>
+            <div class="flex items-center space-x-2">
+                <div class="rounded-full w-12 h-12 bg-blue-500 text-white flex items-center justify-center text-lg font-semibold shadow-md">
+                    {{ ocean_results.neuroticism }}
+                </div>
+                <p class="text-lg font-semibold">
+                    {% if ocean_results.neuroticism <= 20 %}
+                        Muy Baja
+                    {% elif ocean_results.neuroticism <= 40 %}
+                        Baja
+                    {% elif ocean_results.neuroticism <= 60 %}
+                        Moderada
+                    {% elif ocean_results.neuroticism <= 80 %}
+                        Alta
+                    {% else %}
+                        Muy Alta
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+        <!-- Conditional Paragraph for Neuroticism -->
+        <p>
+            {% if ocean_results.neuroticism <= 20 %}
+                Tu puntuación en neuroticismo es muy baja. Eres generalmente calmado y resistente al estrés. Tienes una tendencia a experimentar emociones positivas y a mantener la serenidad en situaciones desafiantes.
+            {% elif ocean_results.neuroticism <= 40 %}
+                Tu puntuación en neuroticismo es baja. Eres emocionalmente estable en la mayoría de las situaciones, pero ocasionalmente puedes experimentar estrés o ansiedad moderados.
+            {% elif ocean_results.neuroticism <= 60 %}
+                Tu puntuación en neuroticismo es moderada. Tienes una buena capacidad para manejar el estrés y las emociones negativas, pero ocasionalmente puedes sentirte ansioso o preocupado.
+            {% elif ocean_results.neuroticism <= 80 %}
+                Tu puntuación en neuroticismo es alta. Puedes ser propenso a experimentar estrés, ansiedad y emociones negativas en situaciones desafiantes. Practicar técnicas de manejo del estrés podría ser beneficioso para ti.
+            {% else %}
+                Tu puntuación en neuroticismo es muy alta. Experimentas emociones negativas con frecuencia y puedes ser sensible al estrés. Es importante buscar formas efectivas de gestionar el estrés y cuidar tu bienestar emocional.
+            {% endif %}
+        </p>
+    </div>
 {% endblock %}
