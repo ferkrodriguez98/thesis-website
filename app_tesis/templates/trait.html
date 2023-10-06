@@ -1,0 +1,39 @@
+<div>
+    <div class="flex justify-between items-center mb-4">
+        <!-- Left Column -->
+        <div>
+            <h2 class="text-xl font-semibold">{{ trait.title }}</h2>
+        </div>
+        <!-- Right Column -->
+        <div class="flex items-center space-x-4">
+            <!-- Text Score -->
+            <p class="text-lg font-semibold">
+                {% if trait.score <= 20 %}
+                    Muy Baja
+                {% elif trait.score <= 40 %}
+                    Baja
+                {% elif trait.score <= 60 %}
+                    Moderada
+                {% elif trait.score <= 80 %}
+                    Alta
+                {% else %}
+                    Muy Alta
+                {% endif %}
+            </p>
+            <!-- Bubble Score -->
+            <div class="rounded-full w-12 h-12 bg-{{trait.color}}-500 text-white flex items-center justify-center text-lg font-semibold shadow-md">
+                {{ trait.score }}
+            </div>
+        </div>
+    </div>
+    
+    <!-- Info and Description -->
+    <div>
+        <p>{{ trait.info }}</p>
+        <br>
+        <p>{{ trait.score_description }}</p>
+    </div>
+
+    <hr class="my-4">
+</div>
+
