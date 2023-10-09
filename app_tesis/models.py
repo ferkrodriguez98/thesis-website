@@ -3,9 +3,12 @@ from django.db import models
 class Person(models.Model):
     birth_date = models.DateField(default='1900-01-01', null=True, blank=True)
     birth_hour = models.TimeField(default='00:00:00', null=True, blank=True)
-    birth_location = models.CharField(max_length=100, default='Lilliput', null=True, blank=True)
+    birth_location_city = models.CharField(max_length=100, default='Ciudad', null=True, blank=True)
+    birth_location_province = models.CharField(max_length=100, default='Provincia', null=True, blank=True)
+    birth_location_country = models.CharField(max_length=100, default='Pais', null=True, blank=True)
     degree = models.CharField(max_length=100, default='None', null=True, blank=True)
     happiness_level = models.IntegerField(choices=[(i, i) for i in range(1, 6)], default=1, null=True, blank=True)
+    submission_datetime = models.DateTimeField(auto_now_add=True, null=True, blank=True)
     ext1 = models.IntegerField(choices=[(i, i) for i in range(1, 6)], default=1, null=True, blank=True)
     ext2 = models.IntegerField(choices=[(i, i) for i in range(1, 6)], default=1, null=True, blank=True)
     ext3 = models.IntegerField(choices=[(i, i) for i in range(1, 6)], default=1, null=True, blank=True)

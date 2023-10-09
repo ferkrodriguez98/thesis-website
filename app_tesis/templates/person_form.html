@@ -111,10 +111,22 @@
                 <input class="shadow appearance-none border rounded w-full text-md md:text-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_date" type="date" name="birth_date" required>
             </div>
             <div class="mb-4">
-                <label class="block text-gray-700 font-bold mb-2 text-lg md:text-2xl" for="birth_location">
-                    Lugar de Nacimiento
+                <label class="block text-gray-700 font-bold mb-2 text-lg md:text-2xl" for="birth_location_country">
+                    País de Nacimiento
                 </label>
-                <input class="shadow appearance-none border rounded text-md md:text-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_location" type="text" name="birth_location" required>
+                <input class="shadow appearance-none border rounded text-md md:text-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_location_country" type="text" name="birth_location_country" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2 text-lg md:text-2xl" for="birth_location_province">
+                    Provincia de Nacimiento
+                </label>
+                <input class="shadow appearance-none border rounded text-md md:text-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_location_province" type="text" name="birth_location_province" required>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2 text-lg md:text-2xl" for="birth_location_city">
+                    Ciudad de Nacimiento
+                </label>
+                <input class="shadow appearance-none border rounded text-md md:text-xl w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_location_city" type="text" name="birth_location_city" required>
             </div>
             {% comment %} <div class="mb-4">
                 <label class="block text-gray-700 font-bold mb-2 text-2xl" for="birth_hour">
@@ -154,7 +166,9 @@
 
             const submitSection = document.getElementById('submit-section');
             const birth_date = document.getElementById('birth_date');
-            const birth_location = document.getElementById('birth_location');
+            const birth_location_city = document.getElementById('birth_location_city');
+            const birth_location_province = document.getElementById('birth_location_province');
+            const birth_location_country = document.getElementById('birth_location_country');
             const submitButton = document.getElementById('submit-button');
             
             let currentPage = 0;
@@ -250,8 +264,10 @@
 
             function updatePage3Completion() {
                 const isBirthDateFilled = birth_date.value.trim() !== "";
-                const isBirthLocationFilled = birth_location.value.trim() !== "";
-                submitButton.disabled = !(isBirthDateFilled && isBirthLocationFilled);
+                const isBirthLocationCityFilled = birth_location_city.value.trim() !== "";
+                const isBirthLocationProvinceFilled = birth_location_province.value.trim() !== "";
+                const isBirthLocationCountryFilled = birth_location_country.value.trim() !== "";
+                submitButton.disabled = !(isBirthDateFilled && isBirthLocationCityFilled && isBirthLocationProvinceFilled && isBirthLocationCountryFilled);
             }
     
             // Event listener for degree input on the first page
@@ -259,7 +275,15 @@
                 updatePage3Completion();
             });
 
-            birth_location.addEventListener('input', function () {
+            birth_location_city.addEventListener('input', function () {
+                updatePage3Completion();
+            });
+
+            birth_location_province.addEventListener('input', function () {
+                updatePage3Completion();
+            });
+
+            birth_location_country.addEventListener('input', function () {
                 updatePage3Completion();
             });
     
