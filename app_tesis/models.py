@@ -1,6 +1,7 @@
 from django.db import models
     
 class Person(models.Model):
+    gender = models.CharField(max_length=1, choices=[('M', 'Masculino'), ('F', 'Femenino'), ('X', 'No especificado')], default='X', null=True, blank=True)
     birth_date = models.DateField(default='1900-01-01', null=True, blank=True)
     birth_hour = models.TimeField(default='00:00:00', null=True, blank=True)
     birth_location_city = models.CharField(max_length=100, default='Ciudad', null=True, blank=True)

@@ -79,6 +79,22 @@
                 </label>
                 <input class="shadow appearance-none border text-xl rounded w-full md:w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="degree" type="text" name="degree">
             </div>
+
+            <div class="my-4 text-center">
+                <label class="text-lg md:text-2xl block text-gray-700 font-bold mb-2" for="gender">
+                    ¿Con qué genero te identificas?
+                </label>
+                <div class="flex justify-center">
+                    <select id="gender" name="gender" class="shadow appearance-none border text-xl rounded w-full md:w-1/2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                        <option value="" disabled selected>Seleccione una opción</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Femenino</option>
+                        <option value="X">Ninguno de los anteriores</option>
+                    </select>
+                </div>
+            </div>            
+            
+            
         </div>
         
         <!-- Página 2 -->
@@ -159,6 +175,7 @@
             const radioButtonsPage1 = firstPage.querySelectorAll('input[type="radio"]');
             const degree = document.querySelector('#degree');
             const nextButton = document.getElementById('next-page');
+            const genderSelect = document.getElementById('gender')
 
             const secondPage = document.querySelector('.page[data-page-index="1"]');
             const radioButtonsPage2 = secondPage.querySelectorAll('input[type="radio"]');
@@ -199,7 +216,8 @@
             function updatePage1Completion() {
                 const isRadioButtonsPage1Checked = Array.from(radioButtonsPage1).some(rb => rb.checked);
                 const isDegreeFilled = degree.value.trim() !== "";
-                nextButton.disabled = !(isRadioButtonsPage1Checked && isDegreeFilled);
+                const isGenderSelected = genderSelect.value !== "";
+                nextButton.disabled = !(isRadioButtonsPage1Checked && isDegreeFilled && isGenderSelected);
             }
 
             // Event listener for radio buttons on the first page
@@ -212,7 +230,12 @@
             // Event listener for degree input on the first page
             degree.addEventListener('input', function () {
                 updatePage1Completion();
-            });        
+            });
+
+            // Event listener for gender
+            gender.addEventListener('change', function () {
+                updatePage1Completion();
+            });  
 
             // Create an object to keep track of checked options for each question
             const checkedOptions = {};
