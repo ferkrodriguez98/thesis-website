@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1 class="text-4xl font-bold text-center mb-6">Formulario</h1>
 	{% comment %} {% if errors %}
 		<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
 			<ul>
@@ -40,8 +39,8 @@
         <!-- Página 1 -->
 
         <div class="page" data-page-index="0">
-            <h2 class="text-md md:text-xl mb-6">
-                El objetivo de este formulario es conseguir datos para un estudio de investigación sobre la personalidad y la felicidad. 
+            <h2 class="text-md md:text-lg mb-6">
+                El objetivo de este formulario es conseguir datos para un estudio de investigación sobre la personalidad.
                 <br><br>Los datos serán utilizados para un trabajo final de graduación de la Universidad de San Andrés. Los datos serán anónimos y no se utilizarán para ningún otro fin que no sea el de este trabajo.
             </h2>
     
@@ -117,13 +116,14 @@
 
         <div class="page" data-page-index="2">
             <h2 class="text-md md:text-xl mb-4">
-                A continuación se presentan 2 preguntas más para tener datos demográficos. Las respuestas son anónimas y solo serán utilizadas con fines académicos.
+                A continuación se presentan 2 preguntas más para tener datos demográficos. Te recuerdo que las respuestas son anónimas y solo serán utilizadas con fines académicos.
             </h2>
             
             <div class="mb-4">
                 <label class="block text-gray-700 font-bold mb-2 text-lg md:text-2xl" for="birth_date">
                     Fecha de Nacimiento
                 </label>
+                <p class="block text-gray-700 mb-2 text-xs md:text-sm">(ojo que el formato es mm/dd/aaaa o dd/mm/aaaa dependiendo de la configuración de tu navegador)</p>
                 <input class="shadow appearance-none border rounded w-full text-md md:text-xl py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="birth_date" type="date" name="birth_date" required>
             </div>
             <div class="mb-4">
@@ -154,8 +154,8 @@
 
         <!-- Next Buttons -->
         <div class="my-6 flex justify-between">
-            <button id="next-page" class="next-button bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-auto" style="float: right;" disabled>Siguiente</button>
-            <button id="next-page-2" class="next-button-2 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-auto" style="float: right;" disabled>Siguiente</button>
+            <button id="next-page" class="next-button bg-blue-500 hover:bg-blue-600 text-white text-lg md:text-xl font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-auto" style="float: right;" disabled>Siguiente</button>
+            <button id="next-page-2" class="next-button-2 bg-blue-500 hover:bg-blue-600 text-white text-lg md:text-xl font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-auto" style="float: right;" disabled>Siguiente</button>
         </div>
 
         <div id="submit-section" class="hidden flex items-center justify-center">

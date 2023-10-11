@@ -2,7 +2,30 @@
 
 {% block content %}
     <div class="bg-white rounded-lg shadow p-4 md:p-6">
-        <h1 class="text-2xl md:text-4xl font-bold mb-2 md:mb-4">¡Gracias por ayudarme con mi Tesis de Licenciatura!</h1>
-        <p class="text-gray-700 text-sm md:text-base">Fermín Rodríguez del Castillo</p>
+        <p class="text-gray-700 text-md md:text-lg mb-4">
+            ¡Hola! Mi nombre es <a href="https://www.linkedin.com/in/fermin-rodriguez-del-castillo" class="text-blue-500 underline">Fermín Rodríguez del Castillo</a> y esta página forma parte de mi tesis de Licenciatura en Negocios Digitales por la Universidad de San Andrés.
+        </p>
+        <p class="text-gray-700 text-md md:text-lg mb-4">
+            El <a href="https://es.wikipedia.org/wiki/Modelo_de_los_cinco_grandes" class="text-blue-500 underline">Test OCEAN<a/> que encontrarás a continuación se basa en una serie de 50 preguntas estándar. Estas preguntas se utilizan para evaluar cinco dimensiones fundamentales de la personalidad:
+        </p>
+        <ul class="list-disc ml-6 text-gray-700 text-md md:text-lg mb-4">
+            <li><strong>Apertura:</strong> Se refiere a tu disposición para experimentar cosas nuevas, aprecio por la creatividad y la imaginación.</li>
+            <li><strong>Responsabilidad:</strong> Mide tu nivel de organización, responsabilidad y capacidad para cumplir con tareas y metas.</li>
+            <li><strong>Extraversión:</strong> Se relaciona con tu nivel de sociabilidad, energía y preferencia por las interacciones sociales.</li>
+            <li><strong>Amabilidad:</strong> Se refiere a tu grado de cooperación, empatía y voluntad para ayudar a los demás.</li>
+            <li><strong>Neuroticismo:</strong> Se enfoca en tu nivel de estabilidad emocional y cómo experimentas emociones negativas.</li>
+        </ul>
+        <p class="text-gray-700 text-md md:text-lg mb-4">
+            Además del Test OCEAN también vas a encontrar otras preguntas con fines demográficos. Estas preguntas no afectan tu resultado del test. Revisá bien cada pregunta y respondé con sinceridad. No hay respuestas correctas o incorrectas, simplemente respondé lo que creas que es más acertado para vos. No hay límite de tiempo para completar el test, pero te recomiendo que lo hagas en un lugar tranquilo y sin interrupciones. No me sirven respuestas falsas solo por el hecho de juntar data, de hecho, me perjudica.
+        </p>
+        <p class="text-gray-700 text-md md:text-lg mb-4">
+            Al finalizar esta autoevaluación de personalidad, vas a poder ver tus puntuaciones en cada una de estas dimensiones. Sin embargo, es importante tener en cuenta que este informe carece de validez psicológica y no debe considerarse un diagnóstico de ningún tipo. Su finalidad es brindarte una herramienta para la autorreflexión y la autoconciencia.
+        </p>
+        <p class="text-gray-700 text-md md:text-lg mb-4">
+            Gracias por darme una mano.
+        </p>
+        <div class="flex justify-center items-center p-4 md:p-6">
+            <a href="{% url 'app_tesis:person_form' %}" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-xl md:text-2xl">Participar</a>
+        </div>
     </div>
 {% endblock content %}

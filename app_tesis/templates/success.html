@@ -4,12 +4,15 @@
     <div class="bg-white rounded-lg shadow-lg p-4 md:p-6">
         <h1 class="text-2xl md:text-4xl font-bold mb-4 text-center">Resultados del Test OCEAN</h1>
 
-		<hr class="mb-4">
-        
+        <hr class="mb-4">
+
         {% for trait in ocean_results.values %}
+            {% include 'trait.html' %}
+        {% endfor %}
 
-		{% include 'trait.html' %}
-
-		{% endfor %}
+        <div class="flex justify-center p-4 md:p-6">
+            <a href="{% url 'app_tesis:home' %}" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded focus:outline-none focus:shadow-outline text-xl md:text-2xl">Volver al inicio</a>
+        </div>
     </div>
 {% endblock %}
+
