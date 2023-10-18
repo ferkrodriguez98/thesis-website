@@ -9,15 +9,15 @@
             <!-- Text Score -->
             <p class="text-lg font-semibold">
                 {% if trait.score <= 20 %}
-                    Muy Baja
+                    {% trans 'Muy Baja' %}
                 {% elif trait.score <= 40 %}
-                    Baja
+                    {% trans 'Baja' %}
                 {% elif trait.score <= 60 %}
-                    Moderada
+                    {% trans 'Moderada' %}
                 {% elif trait.score <= 80 %}
-                    Alta
+                    {% trans 'Alta' %}
                 {% else %}
-                    Muy Alta
+                    {% trans 'Muy Alta' %}
                 {% endif %}
             </p>
             <!-- Bubble Score -->
