@@ -257,6 +257,13 @@
                     // Enable or disable the "Next" button for page 2 based on completion
                     nextButtonPage2.disabled = !isPage2Complete;
                 });
+
+                // Prevent "Enter" key from triggering a click on radio buttons
+                radioButton.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault(); // Prevent from advancing page
+                    }
+                });
             });
 
             // Event listener for "Next" button

@@ -126,7 +126,7 @@ msgid ""
 "Además del Test OCEAN también vas a encontrar otras preguntas con fines "
 "demográficos. Estas preguntas no afectan tu resultado del test."
 msgstr ""
-"A més del Test OCEAN també trobaràs altres preguntes amb fins demogràfics. "
+"A més del Test OCEAN també trobaràs altres preguntes amb finalitats demográfiques. "
 "Aquestes preguntes no afecten el teu resultat del test."
 
 #: app_tesis/templates/home.html:36
@@ -141,7 +141,7 @@ msgstr ""
 
 #: app_tesis/templates/home.html:39
 msgid "Gracias por darme una mano."
-msgstr "Gràcies per donar-me una mà."
+msgstr "Gràcies per donar-me un cop de mà."
 
 #: app_tesis/templates/home.html:42
 msgid "Participar"
