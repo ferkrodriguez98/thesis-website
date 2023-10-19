@@ -1,50 +1,50 @@
-Sóc l'ànima de la festa.
-No parlo gaire.
-Em sento còmode enmig de la gent.
-Em mantinc en segon pla.
-Començo converses.
-Tinc poc a dir.
-Parlo amb molta gent diferent a les festes.
-No m'agrada cridar l'atenció.
-No em molesta ser al centre de l'atenció.
-Sóc tímid amb els estranys.
-Em poso nerviós fàcilment.
-Estic relaxat la major part del temps.
-Em preocupo per coses.
-Rarament em sento trist.
-Em descontrolo fàcilment.
-Em decebo fàcilment.
-El meu estat d'ànim canvia sovint.
-Tinc canvis d'humor freqüents.
-Em irrito amb facilitat.
-Sovent em sento trist.
-Em preocupo poc pels altres.
-Estic interessat en la gent.
-Insulto la gent.
-Simpatitzo amb els sentiments dels altres.
-No m'interessen els problemes dels altres.
-Tinc un cor tendre.
-No em interesso gaire pels altres.
-Dedico temps als altres.
-Sento les emocions dels altres.
-Faig que la gent es senti a gust.
-Estic sempre preparat.
-Deixo les meves pertinences arreu.
-Presto atenció als detalls.
-Faig un embolic de les coses.
-Faig les feines immediatament.
-Sovent oblido de tornar les coses al seu lloc.
-M'agrada l'ordre.
-Evito les meves responsabilitats.
-Segueixo un horari.
-Sóc exigent en la meva feina.
-Tinc un vocabulari ric.
-Em costa d'entendre idees abstractes.
-Tinc una imaginació vívida.
-No m'interessen les idees abstractes.
-Tinc excel·lents idees.
-No tinc una bona imaginació.
-Entenc ràpidament les coses.
-Utilitzo paraules complicades.
-Passo temps reflexionant sobre les coses.
-Estic ple d'idees.
+1. Sóc l'ànima de la festa.
+2. No parlo gaire.
+3. Em sento còmode enmig de la gent.
+4. Em mantinc en segon pla.
+5. Començo converses.
+6. Tinc poc a dir.
+7. Parlo amb molta gent diferent a les festes.
+8. No m'agrada cridar l'atenció.
+9. No em molesta ser al centre de l'atenció.
+10. Sóc tímid amb els estranys.
+11. Em poso nerviós fàcilment.
+12. Estic relaxat la major part del temps.
+13. Em preocupo per coses.
+14. Rarament em sento trist.
+15. Em descontrolo fàcilment.
+16. Em decebo fàcilment.
+17. El meu estat d'ànim canvia sovint.
+18. Tinc canvis d'humor freqüents.
+19. Em irrito amb facilitat.
+20. Sovent em sento trist.
+21. Em preocupo poc pels altres.
+22. Estic interessat en la gent.
+23. Insulto la gent.
+24. Simpatitzo amb els sentiments dels altres.
+25. No m'interessen els problemes dels altres.
+26. Tinc un cor tendre.
+27. No em interesso gaire pels altres.
+28. Dedico temps als altres.
+29. Sento les emocions dels altres.
+30. Faig que la gent es senti a gust.
+31. Estic sempre preparat.
+32. Deixo les meves pertinences arreu.
+33. Presto atenció als detalls.
+34. Faig un embolic de les coses.
+35. Faig les feines immediatament.
+36. Sovent oblido de tornar les coses al seu lloc.
+37. M'agrada l'ordre.
+38. Evito les meves responsabilitats.
+39. Segueixo un horari.
+40. Sóc exigent en la meva feina.
+41. Tinc un vocabulari ric.
+42. Em costa d'entendre idees abstractes.
+43. Tinc una imaginació vívida.
+44. No m'interessen les idees abstractes.
+45. Tinc excel·lents idees.
+46. No tinc una bona imaginació.
+47. Entenc ràpidament les coses.
+48. Utilitzo paraules complicades.
+49. Passo temps reflexionant sobre les coses.
+50. Estic ple d'idees.

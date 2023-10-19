@@ -1,50 +1,50 @@
-Je suis l'âme de la fête.
-Je ne parle pas beaucoup.
-Je me sens à l'aise en compagnie des gens.
-Je reste en retrait.
-Je démarre des conversations.
-J'ai peu à dire.
-Je parle à beaucoup de gens différents lors des fêtes.
-Je n'aime pas attirer l'attention.
-Cela ne me dérange pas d'être au centre de l'attention.
-Je suis timide avec les inconnus.
-Je me stresse facilement.
-Je suis détendu la plupart du temps.
-Je m'inquiète pour des choses.
-Je me sens rarement triste.
-Je suis facilement perturbé.
-Je suis facilement contrarié.
-Mon humeur change souvent.
-J'ai des sautes d'humeur fréquentes.
-Je m'irrite facilement.
-Je me sens souvent triste.
-Je me soucie peu des autres.
-Je m'intéresse aux gens.
-J'insulte les gens.
-Je sympathise avec les sentiments des autres.
-Je ne m'intéresse pas aux problèmes des autres.
-J'ai un cœur tendre.
-Je ne m'intéresse pas vraiment aux autres.
-Je prends du temps pour les autres.
-Je ressens les émotions des autres.
-Je mets les gens à l'aise.
-Je suis toujours préparé.
-Je laisse mes affaires traîner.
-Je fais attention aux détails.
-Je mets le bazar dans les choses.
-J'accomplis rapidement les tâches.
-J'oublie souvent de remettre les choses à leur place.
-J'aime l'ordre.
-Je fuis mes devoirs.
-Je suis un emploi du temps.
-Je suis exigeant dans mon travail.
-J'ai un vocabulaire riche.
-J'ai du mal à comprendre des idées abstraites.
-J'ai une imagination vive.
-Je ne m'intéresse pas aux idées abstraites.
-J'ai d'excellentes idées.
-Je n'ai pas une bonne imagination.
-Je comprends rapidement les choses.
-J'utilise des mots difficiles.
-Je passe du temps à réfléchir aux choses.
-J'ai beaucoup d'idées.
+1. Je suis l'âme de la fête.
+2. Je ne parle pas beaucoup.
+3. Je me sens à l'aise en compagnie des gens.
+4. Je reste en retrait.
+5. Je démarre des conversations.
+6. J'ai peu à dire.
+7. Je parle à beaucoup de gens différents lors des fêtes.
+8. Je n'aime pas attirer l'attention.
+9. Cela ne me dérange pas d'être au centre de l'attention.
+10. Je suis timide avec les inconnus.
+11. Je me stresse facilement.
+12. Je suis détendu la plupart du temps.
+13. Je m'inquiète pour des choses.
+14. Je me sens rarement triste.
+15. Je suis facilement perturbé.
+16. Je suis facilement contrarié.
+17. Mon humeur change souvent.
+18. J'ai des sautes d'humeur fréquentes.
+19. Je m'irrite facilement.
+20. Je me sens souvent triste.
+21. Je me soucie peu des autres.
+22. Je m'intéresse aux gens.
+23. J'insulte les gens.
+24. Je sympathise avec les sentiments des autres.
+25. Je ne m'intéresse pas aux problèmes des autres.
+26. J'ai un cœur tendre.
+27. Je ne m'intéresse pas vraiment aux autres.
+28. Je prends du temps pour les autres.
+29. Je ressens les émotions des autres.
+30. Je mets les gens à l'aise.
+31. Je suis toujours préparé.
+32. Je laisse mes affaires traîner.
+33. Je fais attention aux détails.
+34. Je mets le bazar dans les choses.
+35. J'accomplis rapidement les tâches.
+36. J'oublie souvent de remettre les choses à leur place.
+37. J'aime l'ordre.
+38. Je fuis mes devoirs.
+39. Je suis un emploi du temps.
+40. Je suis exigeant dans mon travail.
+41. J'ai un vocabulaire riche.
+42. J'ai du mal à comprendre des idées abstraites.
+43. J'ai une imagination vive.
+44. Je ne m'intéresse pas aux idées abstraites.
+45. J'ai d'excellentes idées.
+46. Je n'ai pas une bonne imagination.
+47. Je comprends rapidement les choses.
+48. J'utilise des mots difficiles.
+49. Je passe du temps à réfléchir aux choses.
+50. J'ai beaucoup d'idées.

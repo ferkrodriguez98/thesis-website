@@ -1,50 +1,50 @@
-I am the life of the party.
-I don't talk a lot.
-I feel comfortable around people.
-I keep in the background.
-I start conversations.
-I have little to say.
-I talk to a lot of different people at parties.
-I don't like to draw attention to myself.
-I don't mind being the center of attention.
-I am quiet around strangers.
-I get stressed out easily.
-I am relaxed most of the time.
-I worry about things.
-I seldom feel blue.
-I am easily disturbed.
-I get upset easily.
-I change my mood a lot.
-I have frequent mood swings.
-I get irritated easily.
-I often feel blue.
-I feel little concern for others.
-I am interested in people.
-I insult people.
-I sympathize with others' feelings.
-I am not interested in other people's problems.
-I have a soft heart.
-I am not really interested in others.
-I take time out for others.
-I feel others' emotions.
-I make people feel at ease.
-I am always prepared.
-I leave my belongings around.
-I pay attention to details.
-I make a mess of things.
-I get chores done right away.
-I often forget to put things back in their proper place.
-I like order.
-I shirk my duties.
-I follow a schedule.
-I am exacting in my work.
-I have a rich vocabulary.
-I have difficulty understanding abstract ideas.
-I have a vivid imagination.
-I am not interested in abstract ideas.
-I have excellent ideas.
-I do not have a good imagination.
-I am quick to understand things.
-I use difficult words.
-I spend time reflecting on things.
-I am full of ideas.
+1. I am the life of the party.
+2. I don't talk a lot.
+3. I feel comfortable around people.
+4. I keep in the background.
+5. I start conversations.
+6. I have little to say.
+7. I talk to a lot of different people at parties.
+8. I don't like to draw attention to myself.
+9. I don't mind being the center of attention.
+10. I am quiet around strangers.
+11. I get stressed out easily.
+12. I am relaxed most of the time.
+13. I worry about things.
+14. I seldom feel blue.
+15. I am easily disturbed.
+16. I get upset easily.
+17. I change my mood a lot.
+18. I have frequent mood swings.
+19. I get irritated easily.
+20. I often feel blue.
+21. I feel little concern for others.
+22. I am interested in people.
+23. I insult people.
+24. I sympathize with others' feelings.
+25. I am not interested in other people's problems.
+26. I have a soft heart.
+27. I am not really interested in others.
+28. I take time out for others.
+29. I feel others' emotions.
+30. I make people feel at ease.
+31. I am always prepared.
+32. I leave my belongings around.
+33. I pay attention to details.
+34. I make a mess of things.
+35. I get chores done right away.
+36. I often forget to put things back in their proper place.
+37. I like order.
+38. I shirk my duties.
+39. I follow a schedule.
+40. I am exacting in my work.
+41. I have a rich vocabulary.
+42. I have difficulty understanding abstract ideas.
+43. I have a vivid imagination.
+44. I am not interested in abstract ideas.
+45. I have excellent ideas.
+46. I do not have a good imagination.
+47. I am quick to understand things.
+48. I use difficult words.
+49. I spend time reflecting on things.
+50. I am full of ideas.

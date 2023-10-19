@@ -18,6 +18,10 @@ def switch_language(request, language):
         translation.activate(language)
         response = HttpResponseRedirect(request.META.get('HTTP_REFERER'))
         response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
+    else:
+        translation.activate('en')
+        response = HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+        response.set_cookie(settings.LANGUAGE_COOKIE_NAME, 'en')
 
     return response
 
