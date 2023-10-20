@@ -54,19 +54,19 @@ msgstr ""
 
 #: app_tesis/templates/home.html:23
 msgid "Apertura"
-msgstr "Apertura"
+msgstr "Apertura Mentale"
 
 #: app_tesis/templates/home.html:23
 msgid ""
 "Se refiere a tu disposición para experimentar cosas nuevas, aprecio por la "
 "creatividad y la imaginación."
 msgstr ""
-"Si riferisce alla tua predisposizione a sperimentare cose nuove, all'apprezzamento "
-"per la creatività e l'immaginazione."
+"Si riferisce alla tua predisposizione a provare nuove esperienze, alla stima della tua "
+"creatività e immaginazione."
 
 #: app_tesis/templates/home.html:24
 msgid "Responsabilidad"
-msgstr "Responsabilità"
+msgstr "Coscienziosità"
 
 #: app_tesis/templates/home.html:24
 msgid ""
@@ -90,7 +90,7 @@ msgstr ""
 
 #: app_tesis/templates/home.html:26
 msgid "Amabilidad"
-msgstr "Amabilità"
+msgstr "Gradevolezza"
 
 #: app_tesis/templates/home.html:26
 msgid ""
@@ -136,12 +136,12 @@ msgid ""
 "psicológica y no debe considerarse un diagnóstico de ningún tipo."
 msgstr ""
 "È importante tenere presente che i risultati non costituiscono alcuna forma di "
-"certificazione medica e che questa relazione manca di validità psicologica e non "
+"certificazione medica e che questa relazione non presenta validità psicologica e non "
 "dovrebbe essere considerata una diagnosi di alcun tipo."
 
 #: app_tesis/templates/home.html:39
 msgid "Gracias por darme una mano."
-msgstr "Grazie per avermi dato una mano."
+msgstr "Grazie per avermi aiutato."
 
 #: app_tesis/templates/home.html:42
 msgid "Participar"

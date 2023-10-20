@@ -135,35 +135,35 @@ def calculate_ocean(request, answers):
 
     ocean_results = {
         'oppenness': {
-            'title': 'Apertura (Openness)', 
+            'title': 'Openness', 
             'info': openness_info, 
             'score': openness_score, 
             'score_description': openness_score_description[get_score_range(openness_score, score_ranges)],
             'color': 'purple'
             },
         'conscientiousness': {
-            'title': 'Responsabilidad (Conscientiousness)', 
+            'title': 'Conscientiousness', 
             'info': conscientiousness_info, 
             'score': conscientiousness_score, 
             'score_description': conscientiousness_score_description[get_score_range(conscientiousness_score, score_ranges)],
             'color': 'blue'
             },
         'extraversion': {
-            'title': 'Extraversión (Extraversion)', 
+            'title': 'Extraversion', 
             'info': extraversion_info, 
             'score': extraversion_score, 
             'score_description': extraversion_score_description[get_score_range(extraversion_score, score_ranges)],
             'color': 'red'
             },
         'agreeableness': {
-            'title': 'Amabilidad (Agreeableness)', 
+            'title': 'Agreeableness', 
             'info': agreeableness_info, 
             'score': agreeableness_score, 
             'score_description': agreeableness_score_description[get_score_range(agreeableness_score, score_ranges)],
             'color': 'green'
             },
         'neuroticism': {
-            'title': 'Neuroticismo (Neuroticism)', 
+            'title': 'Neuroticism', 
             'info': neuroticism_info, 
             'score': neuroticism_score, 
             'score_description': neuroticism_score_description[get_score_range(neuroticism_score, score_ranges)],
@@ -280,10 +280,10 @@ def get_english_texts():
 
 def get_italian_texts():
     extraversion_info = "L'Estroversione è una dimensione della personalità che descrive il livello di interazione che una persona ha con il proprio ambiente. Le persone estroverse sono socievoli, amichevoli e loquaci, mentre le persone introverso sono riservate, tranquille e discrete."
-    neuroticism_info = "Il Neuroticismo è una dimensione della personalità che descrive il livello di stabilità emotiva e il controllo degli impulsi di una persona. Le persone con un alto livello di neuroticismo sono più inclini a sperimentare emozioni negative come ansia, depressione o rabbia, mentre le persone con un basso livello di neuroticismo sono più propense a sperimentare emozioni positive come calma, tranquillità o felicità."
-    agreeableness_info = "L'Accordabilità è una dimensione della personalità che descrive il livello di empatia e cooperazione di una persona. Le persone con un alto livello di accordabilità sono più propense ad essere altruiste, comprensive e generose, mentre le persone con un basso livello di accordabilità sono più propense a essere competitive, diffidenti ed egoiste."
-    conscientiousness_info = "La Coscienziosità è una dimensione della personalità che descrive il livello di organizzazione e disciplina di una persona. Le persone con un alto livello di coscienziosità sono più propense a essere ordinate, pianificate e disciplinate, mentre le persone con un basso livello di coscienziosità sono più propense a essere disordinate, spontanee e trasandate."
-    openness_info = "L'Apertura è una dimensione della personalità che descrive il livello di apertura mentale e curiosità di una persona. Le persone con un alto livello di apertura sono più propense a essere creative, imaginative e curiose, mentre le persone con un basso livello di apertura sono più propense a essere conservative, tradizionali e convenzionali."
+    neuroticism_info = "Il Nevroticismo è una dimensione della personalità che descrive il livello di stabilità emotiva e il controllo degli impulsi di una persona. Le persone con un alto livello di nevroticismo sono più inclini a sperimentare emozioni negative come ansia, depressione o rabbia, mentre le persone con un basso livello di nevroticismo sono più propense a sperimentare emozioni positive come calma, tranquillità o felicità."
+    agreeableness_info = "La Gradevolezza è una dimensione della personalità che descrive il livello di empatia e cooperazione di una persona. Le persone con un alto livello di gradevolezza sono più propense ad essere altruiste, comprensive e generose, mentre le persone con un basso livello di gradevolezza sono più propense a essere competitive, diffidenti ed egoiste."
+    conscientiousness_info = "La Coscienziosità è una dimensione della personalità che descrive il livello di organizzazione e disciplina di una persona. Le persone con un alto livello di coscienziosità sono più propense a essere ordinate, organizzate e disciplinate, mentre le persone con un basso livello di coscienziosità sono più propense a essere disorganizzate, spontanee e disordinate."
+    openness_info = "L'Apertura è una dimensione della personalità che descrive il livello di apertura mentale e curiosità di una persona. Le persone con un alto livello di apertura sono più propense a essere creative, ricche di immaginazione e curiose, mentre le persone con un basso livello di apertura sono più propense a essere conservative, tradizionali e convenzionali."
 
     extraversion_score_description = { 
         'very_low': "Il tuo punteggio di estroversione è molto basso. Preferisci attività solitarie e puoi essere introverso in situazioni sociali. Apprezzi il tempo da solo e puoi essere riservato.",
@@ -294,19 +294,19 @@ def get_italian_texts():
     }
 
     neuroticism_score_description = { 
-        'very_low': "Il tuo punteggio di neuroticismo è molto basso. Sei generalmente calmo e resiliente allo stress. Hai la tendenza a sperimentare emozioni positive e a mantenere la serenità in situazioni sfidanti.",
-        'low': "Il tuo punteggio di neuroticismo è basso. Sei emotivamente stabile nella maggior parte delle situazioni, ma occasionalmente puoi sperimentare stress o ansia moderati.",
-        'medium': "Il tuo punteggio di neuroticismo è moderato. Hai una buona capacità di gestire lo stress e le emozioni negative, ma occasionalmente puoi sentirti ansioso o preoccupato.",
-        'high': "Il tuo punteggio di neuroticismo è alto. Puoi essere incline a sperimentare stress, ansia ed emozioni negative in situazioni sfidanti. Praticare tecniche di gestione dello stress potrebbe essere benefico per te.",
-        'very_high': "Il tuo punteggio di neuroticismo è molto alto. Sperimenti frequentemente emozioni negative e puoi essere sensibile allo stress. È importante cercare modi efficaci per gestire lo stress e prendersi cura del tuo benessere emotivo."
+        'very_low': "Il tuo punteggio di nevroticismo è molto basso. Sei generalmente calmo e resiliente allo stress. Hai la tendenza a sperimentare emozioni positive e a mantenere la serenità in situazioni stressanti.",
+        'low': "Il tuo punteggio di nevroticismo è basso. Sei emotivamente stabile nella maggior parte delle situazioni, ma occasionalmente puoi sperimentare stress o ansia moderati.",
+        'medium': "Il tuo punteggio di nevroticismo è moderato. Hai una buona capacità di gestire lo stress e le emozioni negative, ma occasionalmente puoi sentirti ansioso o preoccupato.",
+        'high': "Il tuo punteggio di nevroticismo è alto. Puoi essere incline a sperimentare stress, ansia ed emozioni negative in situazioni stressanti. Praticare tecniche di gestione dello stress potrebbe esserti di aiuto.",
+        'very_high': "Il tuo punteggio di nevroticismo è molto alto. Sperimenti frequentemente emozioni negative e puoi essere sensibile allo stress. È importante cercare modi efficaci per gestire lo stress e prendersi cura del tuo benessere emotivo."
     }
 
     agreeableness_score_description = { 
-        'very_low': "Il tuo punteggio di accordabilità è molto basso. Questo suggerisce che puoi essere critico e competitivo anziché cooperativo. Potresti tendere a concentrarti di più sui tuoi interessi che sugli interessi degli altri.",
-        'low': "Il tuo punteggio di accordabilità è basso. Sei in grado di essere cooperativo in alcune situazioni, ma puoi anche essere critico o competitivo in altre.",
-        'medium': "Il tuo punteggio di accordabilità è moderato. Sei generalmente cooperativo ed empatico, ma puoi anche stabilire limiti quando è necessario.",
-        'high': "Il tuo punteggio di accordabilità è alto. Sei cooperativo, empatico e generalmente disposto ad aiutare gli altri. Ti relazioni bene con gli altri e valorizzi relazioni armoniose.",
-        'very_high': "Il tuo punteggio di accordabilità è molto alto. Sei estremamente cooperativo, empatico e sempre pronto ad aiutare gli altri. La tua natura gentile e compassionevole è un punto di forza nelle tue relazioni."
+        'very_low': "Il tuo punteggio di gradevolezza è molto basso. Questo suggerisce che puoi essere critico e competitivo anziché cooperativo. Potresti tendere a concentrarti di più sui tuoi interessi che sugli interessi degli altri.",
+        'low': "Il tuo punteggio di gradevolezza è basso. Sei in grado di essere cooperativo in alcune situazioni, ma puoi anche essere critico o competitivo in altre.",
+        'medium': "Il tuo punteggio di gradevolezza è moderato. Sei generalmente cooperativo ed empatico, ma puoi anche stabilire limiti quando è necessario.",
+        'high': "Il tuo punteggio di gradevolezza è alto. Sei cooperativo, empatico e generalmente disposto ad aiutare gli altri. Ti relazioni bene con gli altri e valorizzi relazioni armoniose.",
+        'very_high': "Il tuo punteggio di gradevolezza è molto alto. Sei estremamente cooperativo, empatico e sempre pronto ad aiutare gli altri. La tua natura gentile e compassionevole è un punto di forza nelle tue relazioni."
     }
 
     conscientiousness_score_description = { 

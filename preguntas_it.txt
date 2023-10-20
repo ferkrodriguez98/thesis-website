@@ -1,7 +1,7 @@
 1. Sono l'anima della festa.
 2. Non parlo molto.
 3. Mi sento a mio agio in mezzo alla gente.
-4. Rimango in secondo piano.
+4. Rimango in disparte.
 5. Inizio conversazioni.
 6. Ho poco da dire.
 7. Parlo con molte persone diverse alle feste.
@@ -12,21 +12,21 @@
 12. Sono rilassato per la maggior parte del tempo.
 13. Mi preoccupo per le cose.
 14. Raramente mi sento triste.
-15. Sono facilmente disturbato.
-16. Mi indispongo facilmente.
+15. Vengo facilmente disturbato.
+16. Mi angoscio facilmente.
 17. Cambio spesso umore.
 18. Ho frequenti sbalzi d'umore.
-19. Mi irritò facilmente.
+19. Mi irrito facilmente.
 20. Spesso mi sento triste.
 21. Mi preoccupo poco per gli altri.
 22. Sono interessato alle persone.
 23. Offendo le persone.
-24. Sono solidale con i sentimenti degli altri.
+24. Sono empatico con i sentimenti degli altri.
 25. Non mi interessano i problemi altrui.
 26. Ho un cuore tenero.
 27. In realtà non mi interesso degli altri.
 28. Dedico del tempo agli altri.
-29. Sento le emozioni degli altri.
+29. Percepisco le emozioni degli altri.
 30. Faccio sentire le persone a loro agio.
 31. Sono sempre preparato.
 32. Lascio i miei oggetti in giro.
@@ -39,7 +39,7 @@
 39. Seguo un programma.
 40. Sono esigente nel mio lavoro.
 41. Ho un ricco vocabolario.
-42. Ho difficoltà a capire idee astratte.
+42. Mi risulta difficile comprendere idee astratte.
 43. Ho un'immaginazione vivida.
 44. Non mi interessano le idee astratte.
 45. Ho ottime idee.
@@ -47,4 +47,4 @@
 47. Sono veloce a capire le cose.
 48. Uso parole difficili.
 49. Passo del tempo a riflettere sulle cose.
-50. Sono ricco di idee.
+50. Sono pieno di idee.
